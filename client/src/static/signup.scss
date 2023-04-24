@@ -1,0 +1,73 @@
+.signup {
+    overflow: auto;
+
+    .title {
+        font-weight: bold;
+        letter-spacing: -0.05em;
+        font-size: 26px;
+        margin: 0;
+        margin-top: 40px;
+    }
+
+    .signup-title {
+        margin: 0;
+        font-size: 17px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .register {
+        margin-top: 25px;
+    }
+
+    .email-confirm {
+        margin-top: 20px;
+    }
+
+    .label-username {
+        margin-top: 20px;
+    }
+
+    .username-disclaimer {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
+    .signup-disclaimer {
+        font-size: 10px;
+        text-align: center;
+        font-weight: 600;
+        margin: 0;
+        a {
+            color: #00A861;
+        }
+
+        &.two {
+            margin-top: 10px;
+        }
+    }
+
+    .bottom {
+        overflow: hidden;
+        &.signup {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .form-submit {
+        &.register {
+            margin-top: 25px;
+        }
+    }
+
+    .login-link {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}

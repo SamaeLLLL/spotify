@@ -1,0 +1,327 @@
+
+.playlist {
+    margin-top: 30px;
+
+    .song {
+        .pd {
+            padding: 10px 0px;
+        }
+        td:first-child {
+        border-radius: 5px 0 0 5px;
+        }
+        td:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.116);
+            cursor: default;
+        }
+    }
+
+
+
+    .playlist-info {
+        display: flex;
+        align-items: flex-end;
+        &:hover {
+            cursor: default;
+        }
+
+        .playlist-image {
+            position: relative;
+            z-index: 0;
+            width: 230px;
+            height: 230px;
+            filter: drop-shadow(2px 2px 25px rgba(0, 0, 0, 0.25));
+        }
+
+        .detail {
+            margin-left: 20px;
+            .playlist-status {
+                font-size: 15px;
+                font-weight: 500;
+                margin: 0;
+            }
+
+            .playlist-name {
+                font-size: 70px;
+                margin: 0;
+                font-weight: bold;
+            }
+
+            .playlist-description {
+                font-size: 15px;
+                font-weight: 400;
+                color: #b8b8b8;
+            }            
+
+            .stats {
+                display: flex;
+                align-items: center;
+                .author-image {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                }
+
+                .dot {
+                    margin-left: 10px;
+                }
+
+                .author {
+                    margin-left: 10px;
+                    font-weight: bold;
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+
+                .likes, .song-amount {
+                    margin-left: 4px;
+                    font-weight: 400;
+                }
+
+                .playlist-length {
+                    margin-left: 4px;
+                    color:rgb(182, 182, 182);
+                }
+            }
+        }
+    }
+
+    .playlist-main {
+
+        margin-top: 30px;
+        margin-left: -30px;
+        margin-right: -30px;
+        background: rgba(0, 0, 0, 0.219);
+        min-height: 65vh;
+
+        .controls {
+            margin: 0 30px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                display: flex;
+                align-items: center;
+
+                .play {
+                    width: 50px;
+                    height: 50px;
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.05);
+                        filter: brightness(130%);
+                    }
+                }
+
+                .like {
+                    width: 30px;
+                    height: 25px;
+                    margin-left: 30px;
+                }
+
+                .download {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 20px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .more {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 20px;
+                }
+
+
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+
+                .search-img {
+                    width: 25px;
+                    height: 25px;
+
+                    &:hover {
+                        filter: brightness(150%);
+                        cursor: pointer;
+                    }
+                }
+                p {
+                    margin-left: 20px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #a3a3a3;
+                    &:hover {
+                        cursor: pointer;
+                        color: white;
+                    }
+                }
+                .arrow-img {
+                    margin-left: 10px;
+                    width: 12px;
+                    height: 20px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+
+        .playlist-content {
+            margin: 0 30px;
+            padding-top: 25px;
+
+            .header {
+                .rows {
+                    display: flex;
+                    justify-content: space-between;
+                    p {
+                        color: #b4b4b4;
+                        font-weight: 500;
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
+
+                    .close {
+                        display: flex;
+                    }
+
+                    .title {
+                        margin-left: 25px;
+                    }
+
+                    .id {
+                        margin-left: 10px;
+                    }
+
+                    .time {
+                        margin-right: 10px;
+                    }
+                }
+
+                .divider {
+                    margin: 0;
+                }
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            .fake-margin {
+                height: 15px;
+            }
+            .player-margin {
+                height: 110px;
+            }
+            
+            .header {
+                display: table-row;
+                border-bottom: 1px solid rgb(109, 109, 109);
+            }
+
+            .id {
+                width: 2%;
+                text-align: center;
+                color: #adadad;
+                cursor: default;
+            }
+
+            .title-header {
+                text-align: left;
+                color: #adadad;
+                font-weight: 500;
+                margin: 0;
+            }
+
+            .title {
+                text-align: left;
+                display: flex;
+                align-items: center;
+
+                .cover {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .text {
+
+                    margin-left: 10px;
+                    p {
+                        margin: 0;
+                    }
+
+                    .title-title {
+                        font-weight: 500;
+                        font-size: 15px;
+                    }
+
+                    .desc {
+                        margin-top: 7px;
+                        font-weight: 400;
+                        font-size: 12px;
+                        color: #adadad;
+
+                    
+                    }
+                }
+            }
+
+            .album {
+                text-align: left;
+                color: #adadad;
+                font-weight: 500;
+
+            }
+            .hover:hover {
+                cursor: default;
+                color: white;
+            }
+
+            .date {
+                text-align: left;
+                color: #adadad;
+                font-weight: 500;
+            }
+            .liked {
+                width: 3%;
+                text-align: center;
+            }
+
+            .length {
+                width: 5%;
+                color: #adadad;
+                font-weight: 500;
+                text-align: center;
+            }
+            
+            .clock {
+                width: 20px;
+                height: 20px;
+            }
+
+            
+        }
+
+    }
+
+    .hover-song {
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            color: white;
+        }
+    }
+}

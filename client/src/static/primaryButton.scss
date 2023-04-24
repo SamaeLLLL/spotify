@@ -1,0 +1,33 @@
+$bg-primary: #202020;
+$text-default: #b6b6b6;
+$text-light: #D9D9D9;
+
+.primary-button {
+    height: 30px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    :hover {
+      cursor: pointer;
+      color: $text-light;
+    }
+  
+    .selected {
+      color: #ffffff;
+    }
+    .selected-img {
+        filter: brightness(150%);
+      }
+  
+    .liked-img {
+      filter: brightness(120%);
+    }
+    
+  
+    p {
+      color: $text-default;
+      font-weight: bold;
+      padding-left: 20px;
+  
+    }
+  }

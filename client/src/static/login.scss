@@ -1,0 +1,232 @@
+.login-screen {
+    color: black;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    .spotify-logo {
+        width: 170px;
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .divider {
+        width: 100vw;
+        height: 1px;
+        background-color: #44444462;
+        margin: 0;
+        margin-top: 20px;
+        border: 0;
+    }
+
+    .third-party {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .continue {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        
+        .button {
+            width: 450px;
+            height: 45px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.253);
+            margin-top: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            .continue-with {
+                color: white;
+                font-weight: 600;
+            }
+
+            .logo {
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+            }
+
+            &:hover {
+                border: 1px solid black;
+                cursor: default;
+            }
+        }
+    }
+
+    .or-divider{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        width: 450px;
+        overflow: hidden;
+
+        .line {
+            width: 200px;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.151);
+        }
+
+        .or {
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+    }
+
+    .form-login {
+        display: flex;
+        flex-direction: column;
+        margin-top: 35px;
+
+        .label-username, .label-password, .label-email {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .label-password {
+            margin-top: 20px;
+        }
+
+        .input-username, .input-password, .input-email {
+            width: 435px;
+            height: 50px;
+            padding-left: 15px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.562);
+
+            &:focus {
+                border: 1px solid black;
+            }
+        }
+        .parent {
+            position: relative;
+            .show-pwd {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                right: 0;
+                top: 25%;
+                margin-right: 13px;
+                transform: scaleX(-1);
+
+                &:hover {
+                    transform: scale(-1.1, 1.1);
+                }
+            }
+        }
+
+        .forgot-password {
+            font-size: 14px;
+            text-decoration: underline;
+            margin-top: 20px;
+
+            &:hover {
+                cursor: pointer;
+                color: green;
+            }
+        }
+
+
+        .bottom {
+            width: 450px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+
+            .remember-me{
+                display: flex;
+                align-items: center;
+                .checkmark {
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 3px;
+                    background: url('../assets/loginSignup/checkmark.svg');
+                    background-size: 100%;
+                }
+                p {
+                    margin-left: 12px;
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+
+                &:hover {
+                    cursor: default;
+                }
+            }
+
+            .form-submit {
+                width: 120px;
+                height: 50px;
+                border-radius: 50px;
+                background-color: #1ED760;
+                border: 0;
+                font-size: 16px;
+                font-weight: bold;
+
+                &:hover {
+                    filter: brightness(110%);
+                    transform: scale(1.03);
+                }
+
+                &.loading {
+                    cursor: wait;
+                }
+            }
+        }
+
+    }
+
+    .divider-bottom {
+        width: 450px;
+        height: 2px;
+        background-color: #0000002a;
+        margin-top: 25px;
+    }
+
+    .sign-up-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 450px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid #00000073;
+            background-color: white;
+            color: #000000b2;
+            font-weight: bold;
+            font-size: 15px;
+
+            &:hover {
+                border: 1px solid black;
+            }
+        }
+    }
+
+    &.loading {
+        cursor: wait;
+    }
+}
+

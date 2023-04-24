@@ -1,0 +1,25 @@
+.center {
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: linear-gradient(180deg, #2D1957 0%, #202020 28.13%);
+    flex-grow: 1;
+    overflow: hidden;
+  
+    &:hover {
+      overflow-y: scroll;
+      padding-right: 17px;
+    }
+  
+    .media-player-margin {
+      margin-top: 120px;
+    }
+  }
+
+  .playlist-things {
+    background: linear-gradient(180deg, #4d0db6 0%, #202020 49.48%);
+
+    &:hover {
+      overflow: scroll;
+    }
+  }

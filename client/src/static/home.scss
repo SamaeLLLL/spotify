@@ -1,0 +1,142 @@
+$bg-primary: #202020;
+$text-default: #b6b6b6;
+$text-light: #D9D9D9;
+$text-dark: #999999;
+
+
+.good-day-section {
+    margin-top: 40px;
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      &:hover {
+        cursor: default;
+      }
+    }
+  
+    .horizontal-playlist {
+      &:hover {
+        cursor: pointer;
+        background-color: #ffffff79;
+      }
+  
+      display: flex;
+      align-items: center;
+  
+      background-color: #ffffff36;
+      height: 90px;
+      width: 23vw;
+      border-radius: 4px;
+  
+      .icon {
+        width: 90px;
+        height: 90px;
+        border-radius: 4px 0 0 4px;
+        box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.25);
+      }
+  
+      .title {
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+  
+      .title:hover {
+        cursor: pointer;
+      } 
+    }
+    .horizontal-playlist-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+  
+  }
+
+  .v-playlist-section {
+    .title-row {
+        .title {
+          font-size: 30px;
+          font-weight: bold;
+          &:hover {
+            cursor: default;
+          }
+        }
+  
+        .show-all {
+          font-size: 15px;
+          font-weight: 600;
+          color: $text-dark;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+  
+  
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+  
+    .vertical-playlist {
+      background: rgba(103, 103, 103, 0.09);
+      border-radius: 5px;
+      height: 270px;
+      width: 200px;
+  
+      &:hover {
+        cursor: pointer;
+        background-color: #ffffff2f;
+      }
+  
+      .title {
+        font-weight: 700;
+        max-width: 150px;
+        max-height: 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0 0 0 15px;
+      }
+  
+      .desc {
+        color: $text-default;
+        margin: 5px 15px;
+        font-size: 13px;
+        max-height: 30px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+  
+      .img {
+        width: 163px;
+        height: 163px;
+        border-radius: 5px;
+        margin: 15px 15px 10px 15px;
+  
+        box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.25);
+      }
+    }
+  
+    .vertical-playlist-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      max-height: 270px;
+      overflow: hidden;
+    }
+  
+    @media screen and (min-width: 2000px) {
+      .vertical-playlist-list {
+        gap: 30px;
+        justify-content: flex-start;
+      }
+    }
+      
+    }
+  

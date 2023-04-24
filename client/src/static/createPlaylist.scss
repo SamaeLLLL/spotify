@@ -1,0 +1,79 @@
+.create-playlist {
+    position: fixed;
+    z-index: 2;
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000094;
+
+    &.hide {
+        display: none;
+    }
+
+    &.show {
+        display: flex;
+    }
+
+    .popup{
+        width: 600px;
+        height: 100px;
+        background-color: #2c2c2c;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.096);
+        padding: 20px;
+        position: relative;
+
+        img {
+            position: absolute;
+            right: 0;
+            padding-right: 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            justify-content: flex-end;
+
+            .uselessDiv {
+                width: 600px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            label {
+                margin-bottom: 10px;
+                font-weight: 600;
+                font-size: 20px;
+            }
+
+            .submit {
+                margin-top: 10px;
+                width: 50px;
+                background-color: inherit;
+                border: 0;
+                color: white;
+                font-weight: bold;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            input[type="text"] {
+                height: 30px;
+                font-size: 18px;
+                border: 0;
+                border: 1px solid rgba(255, 255, 255, 0.096);
+                border-radius: 3px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,53 @@
+$bg-primary: #202020;
+$text-default: #b6b6b6;
+$text-light: #D9D9D9;
+$text-dark: #999999;
+
+$bg-left-sidebar: #161616;
+
+
+.left-sidebar {
+    background-color: $bg-left-sidebar;
+    min-width: 220px;
+    padding: 20px 0 20px 20px;
+    overflow-y: show;
+  }
+  
+  .divider {
+    margin-top: 20px;
+    border-top: 1px solid #585858;
+    margin-right: 20px;
+  }
+  
+
+  .scrollable {
+    max-height: calc(63vh - 100px);
+    overflow: hidden;
+    &:hover {
+      overflow-y: scroll;
+    }
+    @media screen and (min-width: 2000px) {
+       max-height: 66vh;
+    }
+  }
+
+  .album-list {
+    padding: 0;
+    text-align: start;
+    list-style: none;
+    :hover {
+      color: $text-light;
+      cursor: default;
+    }
+    li {
+      overflow: hidden;
+      color: $text-dark;
+      font-size: 15px;
+      margin: 10px 0 10px 0;
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
