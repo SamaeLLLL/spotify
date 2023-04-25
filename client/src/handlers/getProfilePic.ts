@@ -6,8 +6,6 @@ export async function getProfilePic() {
         });
         const data = await res.blob();
         const url = URL.createObjectURL(new Blob([data]));
-        console.log(data)
-        console.log(url)
         return url
 
     } catch (err) {

@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom'
 import UserProfile from './UserProfile'
 import Profile from './userDropdown/Profile'
 import { getProfilePic } from '../handlers/getProfilePic'
+import { getAverageBgColor } from '../helpers/getAverageBgColor'
 
 function Content(props:any) {
   interface relBG {
@@ -19,6 +20,7 @@ function Content(props:any) {
   const { token } = props;
   const [relativeBG, setRelativeBG] = useState<relBG>();
   const [profilePic, setProfilePic] = useState<any>();
+  const [changeBG, setChangeBG] = useState<Boolean>(false);
  
   const location = useLocation();
   const currentPath = location.pathname;
@@ -26,22 +28,46 @@ function Content(props:any) {
   const inPlaylist = currentPath.includes("/playlist");
 
   useEffect(() => {
-    if(currentPath.includes('/userProfile')) {
-      setRelativeBG({'background':'linear-gradient(180deg, #45562A 0%, #202020 49.48%)'});
+    async function fetchProf() {
+      setProfilePic(await getProfilePic());
     }
-  },[currentPath])
+    fetchProf();
+  },[])
+
+  useEffect(() => {
+    if(currentPath.includes('/userProfile')) {
+      setChangeBG(true);
+      if (profilePic) {
+        let img = new Image();
+        img.src = profilePic;
+        img.onload = async () => {
+          setRelativeBG({'background':`linear-gradient(180deg, ${await getAverageBgColor(img)} 0%, #202020 50%`});
+        };
+      }
+    } else {
+      setChangeBG(false);
+    }
+  },[currentPath, profilePic])
 
   function infoCallback() {
     infoCallbackMain()
   }
   async function ppCallback() {
-    setTimeout(async () => {setProfilePic(await getProfilePic())}, 100)
+    setTimeout(async () => {
+      setProfilePic(await getProfilePic());
+    }, 100)
+    console.log("test")
+    let img = new Image();
+    img.onload = async () => {
+      setRelativeBG({'background':`linear-gradient(180deg, ${await getAverageBgColor(img)} 0%, #202020 50%`});
+    };
+    img.src = profilePic;
   }
   
 
 
   return (
-    <div style={relativeBG} className={`center ${inPlaylist ? "playlist-things" : ""}`}>
+    <div style={changeBG ? relativeBG : undefined} className={`center ${inPlaylist ? "playlist-things" : ""}`}>
       <TopMenu pp={profilePic} logout={props.logout} token={props.token} userInfo={props.userInfo} />
       <Routes>
         <Route path='/' element={<Home userInfo={props.userInfo} />} />

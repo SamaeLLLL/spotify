@@ -32,7 +32,6 @@ function UserDropdown(props:any) {
 
   useEffect(() => {
     if(profPic) {
-      console.log(profPic)
       setPP(profPic)
       return;
     }
