@@ -8,5 +8,8 @@ router.route('/')
     // .put(userController.updateUser)
     // .delete(userController.deleteUser);
 
+router.route('/authorImg')
+    .post(playlistController.getAuthorImg)
+
 
 module.exports = router;

@@ -39,7 +39,9 @@ function CreatePlaylist(props:any) {
         await needAsync();
         onHide();
 
-        props.updatePlaylists(await reqPlaylists(await getAccessToken(accessToken)));
+        setTimeout(async () => {
+            props.updatePlaylists(await reqPlaylists(await getAccessToken(accessToken)));
+        }, 50);
         setPlaylistName('');
     }
 

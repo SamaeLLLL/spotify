@@ -59,7 +59,7 @@ const getPP = async (req, res) => {
         }
     };
 
-    res.sendFile(picName, options, (err) => {err ? console.error(err) : console.log("File sent")})
+    res.sendFile(picName, options, (err) => {err ? console.error(err) : ""})
 
 }
 

@@ -9,7 +9,7 @@ import { SamuelPP, likedPage } from '../../assets/playlistControls/playlistCover
 import { useParams } from 'react-router-dom'
 
 function Playlist(props: any) {
-  const { playlistContent } = props
+  const { playlistContent, accessToken } = props
   const title = useParams().id;
   
   const likedSongsInfo = {
@@ -42,25 +42,18 @@ function Playlist(props: any) {
 
   useEffect(() => {
     async function getPlaylistInfo() {
-      console.log(title)
       if (title === 'likedsongs') return;
       const token = await getAccessToken(props.accessToken)
       const allPlaylists = (await reqPlaylists(token))
       const playlist = await allPlaylists.find((playlist: any) => playlist.title === title);
       setPlaylistInfo(playlist)
-      console.log("yo")
     }
     getPlaylistInfo()
   },[title])
 
-  useEffect(() => {
-    console.log(playlistInfo)
-
-  },[playlistInfo])
-
   return (
     <div className='playlist'>
-      <PlaylistInfo info={title === 'likedsongs' ? likedSongsInfo : playlistInfo} />
+      <PlaylistInfo info={title === 'likedsongs' ? likedSongsInfo : playlistInfo} accessToken={accessToken} />
 
       <div className="playlist-main">
         <Controls liked={likedSongs} />
