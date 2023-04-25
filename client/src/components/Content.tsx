@@ -35,7 +35,7 @@ function Content(props:any) {
     infoCallbackMain()
   }
   async function ppCallback() {
-    setProfilePic(await getProfilePic())
+    setTimeout(async () => {setProfilePic(await getProfilePic())}, 100)
   }
   
 
