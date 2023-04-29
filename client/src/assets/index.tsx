@@ -36,9 +36,10 @@ import HotelCalifornia from './Hotelcalifornia.jpg';
 import HeartGreen from './HeartGreen.svg';
 import SearchSearch from './SearchSearch.svg';
 import edit from './edit.svg';
+import albumPlaceholder from './albumPlaceholder.png';
 
 export {
     Home, Search, Library, More, Episodes, Liked, Add, Close, User_add, Playlist, Album, Now, ArrowDeselect, ArrowSelect,
     LikedIcon, Blend, Bangers, TPAB, Damn, GKMC, Daily1, Daily2, Daily3, Daily4, Daily5, Daily6, Morale, OnRepeat, Dramatic,
-    ReleaseRadar, AfterHours, PointOne, PeakHiphop, Top2022, HotelCalifornia, HeartGreen, SearchSearch, edit
+    ReleaseRadar, AfterHours, PointOne, PeakHiphop, Top2022, HotelCalifornia, HeartGreen, SearchSearch, edit, albumPlaceholder
 }  

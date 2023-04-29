@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Blend } from '../../assets'
 import { getAccessToken } from '../../handlers/getAccessToken';
+import { albumPlaceholder } from '../../assets';
 
 function PlaylistInfo(props: any) {
   const { info, accessToken } = props;
   const [authorImageLink, setAuthorImageLink] = useState<string>();
+  const [playlistImg, setPlaylistImg] = useState<string>();
 
   // Get the author image
   useEffect(() => {
     async function fetchAuthorImage() {
       if (!info.author_img) return;
+      if (!info.img) { setPlaylistImg(albumPlaceholder) }
+      else { setPlaylistImg(info.img) } 
       try {
         const reqBody = {
           "authorImg":info.author_img
@@ -35,7 +39,7 @@ function PlaylistInfo(props: any) {
 
   return (
     <div className='playlist-info'>
-        <img src={info.img} alt="" className='playlist-image' />
+        <img src={playlistImg} alt="" className='playlist-image' />
 
         <div className="detail">
             <p className='playlist-status'>{info.pub ? "Public Playlist" : "Playlist"}</p>

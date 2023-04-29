@@ -9,8 +9,9 @@ import Queue from './Queue.svg'
 import Device from './Device.svg'
 import VolumeLow from './VolumeLow.svg'
 import Fullscreen from './Fullscreen.svg'
+import note from './note.svg'
 
 export {
     Play, Pause, NextTrack, PrevTrack, ShuffleEnabled, RepeatDisabled,
-    Mic, Queue, Device, VolumeLow, Fullscreen
+    Mic, Queue, Device, VolumeLow, Fullscreen, note
 }
