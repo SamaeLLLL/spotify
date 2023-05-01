@@ -10,6 +10,7 @@ function PlaylistInfo(props: any) {
 
   // Get the author image
   useEffect(() => {
+    console.log(info)
     async function fetchAuthorImage() {
       if (!info.author_img) return;
       if (!info.img) { setPlaylistImg(albumPlaceholder) }
