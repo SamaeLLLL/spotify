@@ -36,7 +36,7 @@ function Playlist(props: any) {
     length: number | null
   }
   
-  const likedSongs = likedSongsInfo.title == "Liked Songs";
+  const likedSongs = title == "Liked Songs";
 
   const [ playlistInfo, setPlaylistInfo ] = useState<info>(likedSongsInfo)
 
@@ -53,7 +53,7 @@ function Playlist(props: any) {
 
   return (
     <div className='playlist'>
-      <PlaylistInfo info={title === 'likedsongs' ? likedSongsInfo : playlistInfo} accessToken={accessToken} />
+      <PlaylistInfo info={likedSongs ? likedSongsInfo : playlistInfo} accessToken={accessToken} />
 
       <div className="playlist-main">
         <Controls liked={likedSongs} />
