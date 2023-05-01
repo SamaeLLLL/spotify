@@ -6,15 +6,15 @@ import { albumPlaceholder } from '../../assets';
 function PlaylistInfo(props: any) {
   const { info, accessToken } = props;
   const [authorImageLink, setAuthorImageLink] = useState<string>();
-  const [playlistImg, setPlaylistImg] = useState<string>();
+  const [playlistImg, setPlaylistImg] = useState(String);
 
   // Get the author image
   useEffect(() => {
-    console.log(info)
+    console.log(info);
     async function fetchAuthorImage() {
-      if (!info.author_img) return;
       if (!info.img) { setPlaylistImg(albumPlaceholder) }
       else { setPlaylistImg(info.img) } 
+      if (!info.author_img) return;
       try {
         const reqBody = {
           "authorImg":info.author_img
@@ -56,7 +56,6 @@ function PlaylistInfo(props: any) {
                 <p className="playlist-length">{info.length ? info.length : ""}</p>
             </div>
         </div>
-
     </div>
   )
 }

@@ -9,18 +9,30 @@ import { SamuelPP, likedPage } from '../../assets/playlistControls/playlistCover
 import { useParams } from 'react-router-dom'
 
 function Playlist(props: any) {
-  const { playlistContent, accessToken } = props
+  const { playlistContent, accessToken, userInfo } = props
   const title = useParams().id;
   
+  const defaultValues = {
+    img: likedPage,
+    pub: false,
+    title: "Loading",
+    desc: "",
+    author: "..",
+    authorImg: SamuelPP,
+    likes: null,
+    songAmount: 0,
+    length: null
+  }
+
   const likedSongsInfo = {
     img: likedPage,
     pub: false,
     title: "Liked Songs",
     desc: "",
-    author: "Samuel",
-    authorImg: SamuelPP,
+    author: userInfo.username,
+    authorImg: userInfo.user_img,
     likes: null,
-    songAmount: 2039,
+    songAmount: 0,
     length: null
   }
 
@@ -36,13 +48,13 @@ function Playlist(props: any) {
     length: number | null
   }
   
-  const likedSongs = title == "Liked Songs";
+  const likedSongs = title == "likedsongs";
 
-  const [ playlistInfo, setPlaylistInfo ] = useState<info>(likedSongsInfo)
+  const [ playlistInfo, setPlaylistInfo ] = useState<info>(defaultValues)
 
   useEffect(() => {
     async function getPlaylistInfo() {
-      if (title === 'likedsongs') return;
+      if (likedSongs) {setPlaylistInfo(likedSongsInfo); return;}
       const token = await getAccessToken(props.accessToken)
       const allPlaylists = (await reqPlaylists(token))
       const playlist = await allPlaylists.find((playlist: any) => playlist.title === title);
@@ -53,7 +65,7 @@ function Playlist(props: any) {
 
   return (
     <div className='playlist'>
-      <PlaylistInfo info={likedSongs ? likedSongsInfo : playlistInfo} accessToken={accessToken} />
+      <PlaylistInfo info={playlistInfo} accessToken={accessToken} />
 
       <div className="playlist-main">
         <Controls liked={likedSongs} />

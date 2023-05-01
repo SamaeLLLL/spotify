@@ -72,7 +72,7 @@ function Content(props:any) {
       <Routes>
         <Route path='/' element={<Home userInfo={props.userInfo} />} />
         <Route path='/search' element={<Search />} />
-        <Route path='/playlist/:id' element={<Playlist accessToken={token} />} />
+        <Route path='/playlist/:id' element={<Playlist accessToken={token} userInfo={props.userInfo} />} />
         <Route path='/userProfile' element={<Profile infoCallback={infoCallback} ppCallback={ppCallback} token={props.token} userInfo={props.userInfo} />} />
         <Route path='/account' element={<UserProfile />} />
       </Routes>
