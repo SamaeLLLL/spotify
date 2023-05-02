@@ -36,7 +36,8 @@ function App() {
     }
     fetchUserInfo()
   }, [accessToken])
-
+  
+  
   async function refreshUserInfo() {
     if(accessToken) {
       setUserInfo(await getUserInfo(await getAccessToken(accessToken)));

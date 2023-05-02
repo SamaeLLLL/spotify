@@ -18,7 +18,7 @@ function Playlist(props: any) {
     title: "Loading",
     desc: "",
     author: "..",
-    authorImg: SamuelPP,
+    author_img: SamuelPP,
     likes: null,
     songAmount: 0,
     length: null
@@ -30,7 +30,7 @@ function Playlist(props: any) {
     title: "Liked Songs",
     desc: "",
     author: userInfo.username,
-    authorImg: userInfo.user_img,
+    author_img: userInfo.user_img,
     likes: null,
     songAmount: 0,
     length: null
@@ -42,7 +42,7 @@ function Playlist(props: any) {
     title: string,
     desc: string,
     author: string,
-    authorImg: string,
+    author_img: string,
     likes: number | null,
     songAmount: number,
     length: number | null
@@ -61,7 +61,7 @@ function Playlist(props: any) {
       setPlaylistInfo(playlist)
     }
     getPlaylistInfo()
-  },[title])
+  },[title, userInfo])
 
   return (
     <div className='playlist'>

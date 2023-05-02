@@ -69,6 +69,7 @@ function Content(props:any) {
     setSearchQuery(value);
   }
 
+
   return (
     <div style={changeBG ? relativeBG : undefined} className={`center ${inPlaylist ? "playlist-things" : ""}`}>
       <TopMenu pp={profilePic} logout={props.logout} token={props.token} userInfo={props.userInfo} search={handleSearchValue} />
