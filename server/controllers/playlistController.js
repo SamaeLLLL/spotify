@@ -43,7 +43,7 @@ const createPlaylist = async(req, res) => {
         const getUser = await pool.query("SELECT * FROM users WHERE refresh_token = $1",[refreshToken]);
         if (!getUser.rows[0]?.id) return res.sendStatus(403);
         // Create the album
-        const createAlbum = await pool.query("INSERT INTO albums (title, author_id, author_img) VALUES ($1, $2, $3) RETURNING *",[playlistName, getUser.rows[0].id, getUser.rows[0].user_img]);
+        const createAlbum = await pool.query("INSERT INTO albums (title, author_id) VALUES ($1, $2) RETURNING *",[playlistName, getUser.rows[0].id]);
         // Save the album to the users albums
         await pool.query("INSERT INTO saved_albums (user_id, album_id) VALUES ($1, $2)",[getUser.rows[0].id, createAlbum.rows[0].id]);
 

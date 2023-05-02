@@ -18,7 +18,7 @@ function Playlist(props: any) {
     title: "Loading",
     desc: "",
     author: "..",
-    author_img: SamuelPP,
+    author_img: undefined,
     likes: null,
     songAmount: 0,
     length: null
@@ -42,7 +42,7 @@ function Playlist(props: any) {
     title: string,
     desc: string,
     author: string,
-    author_img: string,
+    author_img: string | undefined,
     likes: number | null,
     songAmount: number,
     length: number | null
