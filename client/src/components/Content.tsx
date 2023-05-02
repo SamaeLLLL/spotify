@@ -21,6 +21,7 @@ function Content(props:any) {
   const [relativeBG, setRelativeBG] = useState<relBG>();
   const [profilePic, setProfilePic] = useState<any>();
   const [changeBG, setChangeBG] = useState<Boolean>(false);
+  const [searchQuery, setSearchQuery] = useState(String);
  
   const location = useLocation();
   const currentPath = location.pathname;
@@ -64,14 +65,16 @@ function Content(props:any) {
     img.src = profilePic;
   }
   
-
+  function handleSearchValue(value: string) {
+    setSearchQuery(value);
+  }
 
   return (
     <div style={changeBG ? relativeBG : undefined} className={`center ${inPlaylist ? "playlist-things" : ""}`}>
-      <TopMenu pp={profilePic} logout={props.logout} token={props.token} userInfo={props.userInfo} />
+      <TopMenu pp={profilePic} logout={props.logout} token={props.token} userInfo={props.userInfo} search={handleSearchValue} />
       <Routes>
         <Route path='/' element={<Home userInfo={props.userInfo} />} />
-        <Route path='/search' element={<Search />} />
+        <Route path='/search' element={<Search query={searchQuery} accessToken={token} />} />
         <Route path='/playlist/:id' element={<Playlist accessToken={token} userInfo={props.userInfo} />} />
         <Route path='/userProfile' element={<Profile infoCallback={infoCallback} ppCallback={ppCallback} token={props.token} userInfo={props.userInfo} />} />
         <Route path='/account' element={<UserProfile />} />

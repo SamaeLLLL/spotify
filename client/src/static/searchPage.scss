@@ -1,0 +1,98 @@
+.song-list {
+    min-height: 100vh;
+    margin: 0 -30px;
+    padding: 0 30px;
+    background-color: rgba(0, 0, 0, 0.089);
+    .song {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.123);
+        }
+        .left {
+            display: flex;
+            .song-image {
+                width: 55px;
+                height: 55px;
+            }
+            .song-info {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                margin: 0;
+                margin-left: 10px;
+
+                .song-title {
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: 16px;
+                    cursor: default;
+                }
+                .song-artist {
+                    margin: 0;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgb(199, 199, 199);
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: white;
+                    }
+                }
+                
+            }
+        }
+        .right {
+            display: flex;
+            .song-like {
+                margin-right: 40px;
+                display: none;
+                &:hover {
+                    filter: brightness(130%);
+                } 
+            }
+            .song-duration {
+                font-size: 15px;
+                color: rgb(199, 199, 199);
+                cursor: default;
+            }
+            .song-more {
+                margin-left: 15px;
+                visibility: hidden;
+                &:hover {
+                    filter: brightness(130%);
+                }
+            }
+        }
+    }
+}
+
+.song:hover .right .song-like {
+    display: flex;
+}
+
+.song:hover .right .song-more {
+    visibility: visible;
+}
+
+.search-comp {
+    display: flex;
+    flex-direction: column;
+
+    .songs-heading {
+        padding-left: 20px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+}
+
+
+.search {
+    display: flex;
+    flex-grow: 1;
+}

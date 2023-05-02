@@ -22,7 +22,8 @@ app.use('/profile', require('./routes/api/profile'));
 
 app.use(verifyJWT);
 app.use('/users', require('./routes/api/users'));
-app.use('/api/savedalbums', require('./routes/api/playlists'))
+app.use('/api/savedalbums', require('./routes/api/playlists'));
+app.use('/api/search', require('./routes/api/search'));
 
 
 

@@ -5,6 +5,7 @@ import Play from './Play.svg';
 import Search from './Search.svg';
 import Download from './Download.svg';
 import Clock from './Clock.svg';
+import like from './like.svg';
 
 
-export {ArrowDown, Liked, More, Play, Search, Download, Clock}
+export {ArrowDown, Liked, More, Play, Search, Download, Clock, like}
