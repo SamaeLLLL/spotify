@@ -72,6 +72,9 @@
                     filter: brightness(130%);
                 } 
             }
+            .song-liked {
+                display: flex;
+            }
             .song-duration {
                 font-size: 15px;
                 color: rgb(199, 199, 199);

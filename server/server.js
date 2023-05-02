@@ -24,6 +24,7 @@ app.use(verifyJWT);
 app.use('/users', require('./routes/api/users'));
 app.use('/api/savedalbums', require('./routes/api/playlists'));
 app.use('/api/search', require('./routes/api/search'));
+app.use('/api/likedsongs', require('./routes/api/likedSongs'));
 
 
 
