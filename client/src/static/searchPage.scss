@@ -3,6 +3,11 @@
     margin: 0 -30px;
     padding: 0 30px;
     background-color: rgba(0, 0, 0, 0.089);
+    a {
+        text-decoration: none;
+        cursor: default;
+        color: inherit;
+    }
     .song {
         list-style: none;
         display: flex;
@@ -16,6 +21,17 @@
         }
         .left {
             display: flex;
+            .thing {
+                position: relative;
+                .hover-play {
+                    position: absolute;
+                    top: 30%;
+                    left: 35%;
+                    width: 18px;
+                    height: 21px;
+                    display: none;
+                }
+            }
             .song-image {
                 width: 55px;
                 height: 55px;
@@ -78,6 +94,14 @@
 
 .song:hover .right .song-more {
     visibility: visible;
+}
+
+.song:hover .left .thing .hover-play {
+    display: block;
+}
+
+.song:hover .left .song-image {
+    filter: brightness(80%);
 }
 
 .search-comp {
