@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom'
 function Playlist(props: any) {
   const { playlistContent, accessToken, userInfo } = props
   const title = useParams().id;
+  const [songAmount, setSongAmount] = useState<number>(0);
   
   const defaultValues = {
     img: likedPage,
@@ -20,7 +21,6 @@ function Playlist(props: any) {
     author: "..",
     author_img: undefined,
     likes: null,
-    songAmount: 0,
     length: null
   }
 
@@ -32,7 +32,6 @@ function Playlist(props: any) {
     author: userInfo.username,
     author_img: userInfo.user_img,
     likes: null,
-    songAmount: 0,
     length: null
   }
 
@@ -44,7 +43,6 @@ function Playlist(props: any) {
     author: string,
     author_img: string | undefined,
     likes: number | null,
-    songAmount: number,
     length: number | null
   }
   
@@ -63,13 +61,17 @@ function Playlist(props: any) {
     getPlaylistInfo()
   },[title, userInfo])
 
+  function callBackSongAmount(amount: number) {
+    setSongAmount(amount)
+  }
+
   return (
     <div className='playlist'>
-      <PlaylistInfo info={playlistInfo} accessToken={accessToken} />
+      <PlaylistInfo info={playlistInfo} songAmount={songAmount} accessToken={accessToken} />
 
       <div className="playlist-main">
         <Controls liked={likedSongs} />
-        <PlaylistContent />
+        <PlaylistContent accessToken={accessToken} amountCB={callBackSongAmount} />
 
       </div>
 

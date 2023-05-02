@@ -33,7 +33,12 @@ const saveLikedSong = async (req, res) => {
         if(!getUser.rows[0]?.id) return res.sendStatus(403); // Forbidden
 
         console.log(song_id)
-        const response = await pool.query("INSERT INTO liked_songs (user_id, song_id) VALUES ($1, $2) RETURNING *",[getUser.rows[0].id, song_id]);
+        const currentDate = new Date().toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          });
+        const response = await pool.query("INSERT INTO liked_songs (user_id, song_id, date_added) VALUES ($1, $2, $3) RETURNING *",[getUser.rows[0].id, song_id, currentDate]);
 
         res.json(response.rows[0])
 

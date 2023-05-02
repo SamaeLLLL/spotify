@@ -71,16 +71,12 @@ function Search(props: any) {
           }
       });
       const data = await res.json();
-      console.log(data);
       setLiked((prevLiked: any) => [...prevLiked, data])
     } catch (error) {
       console.error("Search: " + error)
     }
   }
 
-  useEffect(() => {
-    console.log(liked)
-  },[liked])
 
   const handleRemoveSong = async (id: string) => {
     try {
@@ -96,7 +92,6 @@ function Search(props: any) {
           }
       });
       const data = await res.json();
-      console.log(data); 
       setLiked((prevLiked: any[]) => prevLiked.filter(song => song.song_id !== id))
 
     } catch (error) {

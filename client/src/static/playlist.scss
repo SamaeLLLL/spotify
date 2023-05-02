@@ -3,6 +3,15 @@
     margin-top: 30px;
 
     .song {
+        .link {
+            cursor: default;
+        }
+        .id-hovered {
+            display: none;
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+        }
         .pd {
             padding: 10px 0px;
         }
@@ -18,7 +27,12 @@
         }
     }
 
-
+    .song:hover .id .id-hovered {
+        display: block;
+    }
+    .song:hover .id .id-not-hovered {
+        display: none;
+    }
 
     .playlist-info {
         display: flex;
@@ -298,6 +312,13 @@
             .liked {
                 width: 3%;
                 text-align: center;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    &:hover {
+                        filter: brightness(130%);
+                    }
+                }
             }
 
             .length {

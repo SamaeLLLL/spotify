@@ -33,7 +33,6 @@ function CreatePlaylist(props:any) {
                 }
             })
             .then(res => res.json())
-            .then(data => console.log(data))
             .catch(err => console.error("CreatePlaylist/handleSubmit: " + err));
         }
         await needAsync();

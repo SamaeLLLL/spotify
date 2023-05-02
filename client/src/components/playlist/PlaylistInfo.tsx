@@ -4,7 +4,7 @@ import { getAccessToken } from '../../handlers/getAccessToken';
 import { albumPlaceholder } from '../../assets';
 
 function PlaylistInfo(props: any) {
-  const { info, accessToken } = props;
+  const { info, accessToken, songAmount } = props;
   const [authorImageLink, setAuthorImageLink] = useState<string>();
   const [playlistImg, setPlaylistImg] = useState(String);
 
@@ -51,7 +51,7 @@ function PlaylistInfo(props: any) {
                 <p className="author">{info.author}</p>
                 <p className='dot'>•</p>
                 <p className="likes">{info.likes} {info.likes ? "•" : ""}</p>
-                <p className="song-amount">{info.songAmount} songs{info.length ? "," : ""}</p>
+                <p className="song-amount">{songAmount} songs{info.length ? "," : ""}</p>
                 <p className="playlist-length">{info.length ? info.length : ""}</p>
             </div>
         </div>
