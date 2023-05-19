@@ -50,7 +50,7 @@ function PlaylistInfo(props: any) {
                 <img src={authorImageLink} alt="" className='author-image' title={info.author} />
                 <p className="author">{info.author}</p>
                 <p className='dot'>•</p>
-                <p className="likes">{info.likes} {info.likes ? "•" : ""}</p>
+                <p className="likes">{info.likes} {info.likes ? "likes •" : ""}</p>
                 <p className="song-amount">{songAmount} songs{info.length ? "," : ""}</p>
                 <p className="playlist-length">{info.length ? info.length : ""}</p>
             </div>

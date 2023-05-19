@@ -13,7 +13,7 @@ const getLikedSongs = async(req, res) => {
         const getUser = await pool.query("SELECT id FROM users WHERE refresh_token = $1",[refreshToken]);
         if(!getUser.rows[0]?.id) return res.sendStatus(403); // Forbidden
 
-        const likedSongs = await pool.query("SELECT * FROM liked_songs INNER JOIN songs ON songs.track_id = liked_songs.song_id WHERE user_id = $1",[getUser.rows[0].id]);
+        const likedSongs = await pool.query("SELECT * FROM liked_songs INNER JOIN songs ON songs.track_id = liked_songs.song_id WHERE user_id = $1 ORDER BY ord_id DESC",[getUser.rows[0].id]);
         res.json(likedSongs.rows);
     } catch (error) {
         console.error("likedSongsController/getLikedSongs: " + error.message);
