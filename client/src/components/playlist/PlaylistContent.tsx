@@ -23,7 +23,21 @@ function PlaylistContent(props: any) {
   }
 
   useEffect(() => {
-    if (title !== "likedsongs") return;
+    if (title !== "likedsongs") {
+      const fetchPlaylist = async () => {
+        const res = await fetch((`/api/albums/${title}`), {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            'Authorization': `Bearer ${await getAccessToken(accessToken)}`
+          }
+        });
+        const data = await res.json();
+        setSongs(data);
+      }
+      fetchPlaylist();
+      return;
+    }
     const fetchLiked = async () => {
       const res = await fetch(('/api/likedsongs'), {
         method: "GET",
@@ -52,7 +66,8 @@ function PlaylistContent(props: any) {
         const reqBody = {
           "song_id":id
         }
-        const res = await fetch(("/api/likedsongs"), {
+        console.log(reqBody);
+        const res = await fetch((title === 'likedsongs' ? "/api/likedsongs" : `/api/albums/${title}`), {
             method: "DELETE",
             body: JSON.stringify(reqBody),
             headers: {

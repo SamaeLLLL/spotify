@@ -6,7 +6,7 @@ const getLikedSongs = async(req, res) => {
 
         // Get user refresh token
         const cookies = req.cookies;
-        if(!cookies?.jwt) return res.statusCode(401);
+        if(!cookies?.jwt) return res.sendStatus(401);
         const refreshToken = cookies.jwt;
 
         // Get user based on refresh token
@@ -23,16 +23,15 @@ const getLikedSongs = async(req, res) => {
 const saveLikedSong = async (req, res) => {
     try {
         const { song_id } = req.body;
-        if (!song_id) return res.statusCode(401);
+        if (!song_id) return res.sendStatus(401);
         const cookies = req.cookies;
-        if(!cookies?.jwt) return res.statusCode(401);
+        if(!cookies?.jwt) return res.sendStatus(401);
         const refreshToken = cookies.jwt;
 
         // Get user based on refresh token
         const getUser = await pool.query("SELECT id FROM users WHERE refresh_token = $1",[refreshToken]);
         if(!getUser.rows[0]?.id) return res.sendStatus(403); // Forbidden
 
-        console.log(song_id)
         const currentDate = new Date().toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',
@@ -51,7 +50,7 @@ const deleteLikedSong = async (req, res) => {
     try {
         const { song_id } = req.body;
         const cookies = req.cookies;
-        if(!cookies?.jwt) return res.statusCode(401);
+        if(!cookies?.jwt) return res.sendStatus(401);
         const refreshToken = cookies.jwt;
 
         // Get user based on refresh token
